@@ -152,7 +152,7 @@ input[type=text]:focus {
 
 // Homepage Header
 
-header {
+header{
     /*position: relative;
     width: 100%;
     min-height: auto;
@@ -165,6 +165,79 @@ header {
     background: url("../img/pugInBlanket.jpg"), @theme-secondary; /* fallback for old browsers */
     background: url("../img/pugInBlanket.jpg"), -webkit-linear-gradient(to left, @theme-secondary , @theme-tertiary); /* Chrome 10-25, Safari 5.1-6 */
     background: url("../img/pugInBlanket.jpg"), linear-gradient(to left, @theme-secondary , @theme-tertiary); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+    .header-content {
+        text-align: center;
+        padding: 150px 0 50px;
+        position: relative;
+        .header-content-inner {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+            h1 {
+                margin-top: 0;
+                margin-bottom: 30px;
+                font-size: 30px;
+            }
+            .list-badges {
+                margin-bottom: 25px;
+                img {
+                    height: 50px;
+                    margin-bottom: 25px;
+                }
+            }
+        }
+    }
+    /* {
+        max-width: 300px;
+        margin: 0 auto 100px;
+        .screen img {
+            border-radius: 3px;
+        }
+    }*/
+    @media (min-width: 768px) {
+        min-height: 100%;
+        .header-content {
+            text-align: left;
+            padding: 0;
+            height: 100vh;
+            .header-content-inner {
+                max-width: none;
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                h1 {
+                    font-size: 35px;
+                }
+            }
+        }
+        /*.device-container {
+            max-width: none;
+            max-height: calc(100vh - 100px);
+            margin: 100px auto 0;
+        }*/
+    }
+    @media (min-width: 992px) {
+        .header-content .header-content-inner h1 {
+            font-size: 50px;
+        }
+    }
+}
+
+.closing-header{
+    /*position: relative;
+    width: 100%;
+    min-height: auto;
+    overflow-y: hidden;*/
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: url("../img/weimeranerInField.jpg"), @theme-secondary; /* fallback for old browsers */
+    background: url("../img/weimeranerInField.jpg"), -webkit-linear-gradient(to left, @theme-secondary , @theme-tertiary); /* Chrome 10-25, Safari 5.1-6 */
+    background: url("../img/weimeranerInField.jpg"), linear-gradient(to left, @theme-secondary , @theme-tertiary); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: white;
     .header-content {
         text-align: center;
