@@ -1,4 +1,4 @@
-(function($) {
+(function ($) {
     "use strict"; // Start of use strict
 
     // jQuery for page scrolling feature - requires jQuery Easing plugin
@@ -10,14 +10,33 @@
         event.preventDefault();
     });
 
-    // Highlight the top nav as scrolling occurs
+/* Turns on white background only when at picture of petyon
+
+    $(document).ready(function () {
+        var scroll_start = 0;
+        var startchange = $('a.page-scroll');
+        var offset = startchange.offset();
+        if (startchange.length) {
+            $(document).scroll(function () {
+                scroll_start = $(this).scrollTop();
+                if (scroll_start > 820) {
+                    $(".navbar-default").css('background-color', 'White');
+                } else {
+                    $('.navbar-default').css('background-color', 'transparent');
+                }
+            });
+        }
+    });
+    */
+
+    //    Highlight the top nav as scrolling occurs
     $('body').scrollspy({
         target: '.navbar-fixed-top',
         offset: 100
     });
 
     // Closes the Responsive Menu on Menu Item Click
-    $('.navbar-collapse ul li a').click(function() {
+    $('.navbar-collapse ul li a').click(function () {
         $('.navbar-toggle:visible').click();
     });
 

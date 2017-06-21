@@ -163,16 +163,16 @@ header {
     width: 100%;
     min-height: auto;
     overflow-y: hidden;*/
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   background: url("../img/pugInBlanket.jpg"), #7b4397;
   /* fallback for old browsers */
   background: url("../img/pugInBlanket.jpg"), -webkit-linear-gradient(to left, #7b4397, #dc2430);
   /* Chrome 10-25, Safari 5.1-6 */
   background: url("../img/pugInBlanket.jpg"), linear-gradient(to left, #7b4397, #dc2430);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: white;
   /* {
         max-width: 300px;
@@ -239,16 +239,16 @@ header .header-content .header-content-inner .list-badges img {
     width: 100%;
     min-height: auto;
     overflow-y: hidden;*/
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   background: url("../img/weimeranerInField.jpg"), #7b4397;
   /* fallback for old browsers */
   background: url("../img/weimeranerInField.jpg"), -webkit-linear-gradient(to left, #7b4397, #dc2430);
   /* Chrome 10-25, Safari 5.1-6 */
   background: url("../img/weimeranerInField.jpg"), linear-gradient(to left, #7b4397, #dc2430);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: white;
   /* {
         max-width: 300px;
