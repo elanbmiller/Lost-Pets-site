@@ -242,9 +242,13 @@ header{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
- 
 
-    color: white;
+    
+    color: whitesmoke;
+
+
+    font-size: 100px;//makes envelope bigger
+
     .header-content {
         text-align: center;
         padding: 150px 0 50px;
@@ -253,10 +257,11 @@ header{
             position: relative;
             max-width: 500px;
             margin: 0 auto;
-            h1 {
+            h2 {
                 margin-top: 0;
                 margin-bottom: 30px;
                 font-size: 30px;
+
             }
             .list-badges {
                 margin-bottom: 25px;
@@ -399,6 +404,7 @@ section.search {
     .section-heading {
         h2 {
             margin-top: 0;
+            font-size: 75px;
         }
         p {
             margin-bottom: 0;
@@ -519,7 +525,7 @@ section.contact {
                     }
                 }
             }
-            &.social-google-plus {
+            &.email-contact {
                 a {
                     background-color: @brand-google-plus;
                     &:hover {
@@ -529,7 +535,10 @@ section.contact {
             }
         }
     }
+    
 }
+
+
 
 footer {
     background-color: @gray-darker;

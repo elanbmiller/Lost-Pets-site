@@ -249,7 +249,8 @@ header .header-content .header-content-inner .list-badges img {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: white;
+  color: whitesmoke;
+  font-size: 100px;
   /* {
         max-width: 300px;
         margin: 0 auto 100px;
@@ -268,7 +269,7 @@ header .header-content .header-content-inner .list-badges img {
   max-width: 500px;
   margin: 0 auto;
 }
-.closing-header .header-content .header-content-inner h1 {
+.closing-header .header-content .header-content-inner h2 {
   margin-top: 0;
   margin-bottom: 30px;
   font-size: 30px;
@@ -428,6 +429,7 @@ section.search .section-heading {
 }
 section.search .section-heading h2 {
   margin-top: 0;
+  font-size: 75px;
 }
 section.search .section-heading p {
   margin-bottom: 0;
@@ -510,10 +512,10 @@ section.contact ul.list-social li.social-facebook a {
 section.contact ul.list-social li.social-facebook a:hover {
   background-color: #344e86;
 }
-section.contact ul.list-social li.social-google-plus a {
+section.contact ul.list-social li.email-contact a {
   background-color: #dd4b39;
 }
-section.contact ul.list-social li.social-google-plus a:hover {
+section.contact ul.list-social li.email-contact a:hover {
   background-color: #d73925;
 }
 footer {
