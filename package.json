@@ -16,6 +16,8 @@
     "jquery": "^1.11.3"
   },
   "dependencies": {
+    "angular": "^1.6.4",
+    "gulp-jshint": "file:node_modules/gulp-jshint",
     "simple-line-icons": "^2.3.2"
   }
 }
