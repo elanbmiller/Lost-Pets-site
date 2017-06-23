@@ -68,18 +68,28 @@
 });*/
 
 //needs fixing--page gets all messed up
-$(document).ready( function() {
+$(document).ready(function () {
     $("#detailButton").hide(); //hide your div initially
-    var dbSearch = $("#search").offset().top;
-    //var contactPage = $("#contact").offset().top;
-    var contactPage = 4500;
-    console.log("DBSearch :" + dbSearch);
-    console.log("Contact Page: " + contactPage);
-    $(window).scroll(function() {
-        if($(window).scrollTop() > dbSearch && $(window).scrollTop() < contactPage) { //scrolled past the other div?
+
+    $(window).scroll(function () {
+        var dbSearch = $("#search").offset().top;
+        var contactPage = 4500;
+        if ($(window).scrollTop() > dbSearch && $(window).scrollTop() < contactPage) { //scrolled past the other div?
             $("#detailButton").show(); //reached the desired point -- show div
         }
-        else{
+        /*
+        console.log("scrollTop: " + $(window).scrollTop());
+        console.log("document.height: " + $(document).height());
+        console.log("window.height: " + $(window).height());
+
+        //scrolltop max 4060 vs document.height 4870
+        //4889 vs 5699 (dif 810)
+        if ($(window).scrollTop() + 10 >= $(document).height() - $(window).height()) {
+            alert("We're at the bottom of the page!!");
+            exit();
+        }
+        */
+        else {
             $("#detailButton").hide();
         }
     });
