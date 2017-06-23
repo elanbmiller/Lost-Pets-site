@@ -518,29 +518,32 @@ section.contact ul.list-social li.email-contact a {
 section.contact ul.list-social li.email-contact a:hover {
   background-color: #d73925;
 }
+/*
 footer {
-  background-color: #222222;
-  padding: 25px 0;
-  color: rgba(255, 255, 255, 0.3);
-  text-align: center;
-}
-footer p {
-  font-size: 12px;
-  margin: 0;
-}
-footer ul {
-  margin-bottom: 0;
-}
-footer ul li a {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.3);
-}
-footer ul li a:hover,
-footer ul li a:focus,
-footer ul li a:active,
-footer ul li a.active {
-  text-decoration: none;
-}
+    background-color: @gray-darker;
+    padding: 25px 0;
+    color: fade(white, 30%);
+    text-align: center;
+    p {
+        font-size: 12px;
+        margin: 0;
+    }
+    ul {
+        margin-bottom: 0;
+        li {
+            a {
+                font-size: 12px;
+                color: fade(white, 30%);
+                &:hover,
+                &:focus,
+                &:active,
+                &.active {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}*/
 .bg-primary {
   background: #fdcc52;
   background: -webkit-linear-gradient(#fdcc52, #fdc539);
@@ -575,6 +578,32 @@ footer ul li a.active {
 .btn-xl {
   padding: 15px 45px;
   font-size: 11px;
+}
+#detailButton {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Fixed/sticky position */
+  top: 50%;
+  /* Place the button at the bottom of the page */
+  right: 30px;
+  /* Place the button 30px from the right */
+  z-index: 99;
+  /* Make sure it does not overlap */
+  border: none;
+  /* Remove borders */
+  outline: none;
+  /* Remove outline */
+  cursor: pointer;
+  /* Add a mouse pointer on hover */
+  padding: 15px;
+  /* Some padding */
+  border-radius: 10px;
+  /* Rounded corners */
+}
+#detailButton #detailButton:hover {
+  background-color: #555;
+  /* Add a dark-grey background on hover */
 }
 ::-moz-selection {
   color: white;

@@ -1,44 +1,44 @@
 'use strict';
 
 angular.module('LostPetsApp')
-  .controller('DishDetailController', ['$scope', 'petDBFactory', function($scope, petDBFactory) {
+    .controller('DishDetailController', ['$scope', 'petDBFactory', function ($scope, petDBFactory) {
 
-    $scope.petDB = petDBFactory.getDB();
+        $scope.petDB = petDBFactory.getDB();
 
-    //initially false
-    $scope.showDetails = false;
+        //initially false
+        $scope.showDetails = false;
 
-    $scope.comment = {author: "", rating: 5, comment: "", date: new Date().toISOString(), moreDetails: ""};
+        $scope.entry = { author: "", date: new Date().toISOString(), moreDetails: "" };
 
 
-    $scope.toggleDetails = function() {
-      $scope.showDetails = !$scope.showDetails;
-    };
+        $scope.toggleDetails = function () {
+            $scope.showDetails = !$scope.showDetails;
+        };
 
-    //$scope.dish = dish;
+        //$scope.dish = dish;
 
-  }])
+    }])
 
-  .controller('ContactController', ['$scope', function($scope) {
-    $scope.feedback = {
-      mychannel: "",
-      firstName: "",
-      lastName: "",
-      agree: false,
-      email: ""
-    };
-    var channels = [{
-      value: "tel",
-      label: "Tel."
-    }, {
-      value: "Email",
-      label: "Email"
-    }];
-    $scope.channels = channels;
-    $scope.invalidChannelSelection = false;
-  }])
+    .controller('ContactController', ['$scope', function ($scope) {
+        $scope.feedback = {
+            mychannel: "",
+            firstName: "",
+            lastName: "",
+            agree: false,
+            email: ""
+        };
+        var channels = [{
+            value: "tel",
+            label: "Tel."
+        }, {
+            value: "Email",
+            label: "Email"
+        }];
+        $scope.channels = channels;
+        $scope.invalidChannelSelection = false;
+    }])
 
-  .controller('FeedbackController', ['$scope', function($scope) {
+.controller('FeedbackController', ['$scope', function($scope) {
     $scope.sendFeedback = function() {
       console.log($scope.feedback);
       if ($scope.feedback.agree && ($scope.feedback.mychannel === "") && !$scope.feedback.mychannel) {
@@ -65,23 +65,24 @@ angular.module('LostPetsApp')
 
 
 
-  .controller('PetDetailController', ['$scope', function($scope) {
-    $scope.submitComment = function () {
-    console.log($scope.comment);
+.controller('PetDetailController', ['$scope', function($scope) {
+    $scope.submitEntry = function () {
+    console.log($scope.entry);
 
     //Step 2: This is how you record the date
-    $scope.comment.date = new Date().toISOString();
+    $scope.entry.date = new Date().toISOString();
 
     // Step 3: Push your comment into the dish's comment array
-    $scope.dish.comments.push($scope.comment);
+    $scope.DBofPets.entries.push($scope.entry);
 
     //Step 4: reset your form to pristine
     $scope.commentForm.$setPristine();
 
     //Step 5: reset your JavaScript object that holds your comment
-    $scope.comment = {author: "", rating: 5, comment: "", date: new Date().toISOString()};
-    console.log($scope.comment);
-};
+    $scope.entry = {author: "", date: new Date().toISOString()};
+    console.log($scope.entry);
+    };
+}]);
 
 
-  }]);
+

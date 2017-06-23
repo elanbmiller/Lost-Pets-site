@@ -156,7 +156,7 @@
         <div class="container">
             <div class="row row-content" ng-controller="DishDetailController">
                 <div class="col-xs-12 text-center">
-                    <button ng-click="toggleDetails()" class="btn btn-xs btn-primary pull-right" style="margin-top:50px;" type="button">{{showDetails ? 'Hide Details':'Show Details'}}</button>
+                    <button ng-click="toggleDetails()" class="btn btn-xs btn-primary pull-right" id="detailButton" style="margin-top:50px;" type="button">{{showDetails ? 'Hide Details':'Show Details'}}</button>
                     <div class="media">
                         <!--
                         <div class="media-left media-middle">
@@ -180,11 +180,17 @@
                         <input type="text" name="search" placeholder="Search" ng-model="inputText">
                     </p>
                     <ul>
-                        <blockquote ng-repeat="comment in petDB.comments | orderBy:inputText">
-                            <p>{{comment.rating}} Stars</p>
-                            <p>{{comment.comment}}</p>
-                            <p ng-show="showDetails">{{comment.moreDetails}}</p>
-                            <footer>{{comment.author}}, {{comment.date | date}}</footer>
+                        <blockquote ng-repeat="entry in petDB.entries | orderBy:inputText">
+                            <div class="media">
+                                <div class="media-left media-middle">
+                                    <a href="#"><img class="media-object img-thumbnail" style="max-width: 100%;" ng-src={{entry.picture}} alt="someImage"></a>
+                                </div>
+                                <p style="padding:1px;"></p>
+                                <div class="media-body">
+                                    <p ng-show="showDetails">{{entry.moreDetails}}</p>
+                                    <footer>{{entry.author}}, {{entry.date | date}}</footer>
+                                </div>
+                            </div>
                         </blockquote>
                     </ul>
 

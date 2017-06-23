@@ -539,7 +539,7 @@ section.contact {
 }
 
 
-
+/*
 footer {
     background-color: @gray-darker;
     padding: 25px 0;
@@ -564,7 +564,7 @@ footer {
             }
         }
     }
-}
+}*/
 
 // Bootstrap Overrides
 
@@ -607,6 +607,30 @@ footer {
     padding: 15px 45px;
     font-size: 11px;
 }
+
+#detailButton{
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    top: 50%; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+
+
+
+    #detailButton:hover {
+        background-color: #555; /* Add a dark-grey background on hover */
+    }
+
+
+
+}
+
+
 
 // Extras
 // -- Highlight Color Customization
