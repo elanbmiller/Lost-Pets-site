@@ -52,46 +52,31 @@
 })(jQuery); // End of use strict
 
 
-
-/*$(document).ready(function () {
-
-    $(window).on('scroll', function () {
-        var y_scroll_pos = window.pageYOffset;
-        var scroll_pos_test = 167 // Edit this number to define how far down the page the div fades in.
-
-        if (y_scroll_pos > scroll_pos_test) {
-            $('#detailButton').toggle();
-        }
-
-    });
-
-});*/
-
 //needs fixing--page gets all messed up
-$(document).ready(function () {
-    $("#detailButton").hide(); //hide your div initially
+// $(document).ready(function () {
+//     $("#detailButton").hide(); //hide your div initially
 
-    $(window).scroll(function () {
-        var dbSearch = $("#search").offset().top;
-        var contactPage = 4500;
-        if ($(window).scrollTop() > dbSearch && $(window).scrollTop() < contactPage) { //scrolled past the other div?
-            $("#detailButton").show(); //reached the desired point -- show div
-        }
-        /*
-        console.log("scrollTop: " + $(window).scrollTop());
-        console.log("document.height: " + $(document).height());
-        console.log("window.height: " + $(window).height());
+//     $(window).scroll(function () {
+//         var dbSearch = $("#search").offset().top;
+//         var contactPage = 4500;
+//         if ($(window).scrollTop() > dbSearch && $(window).scrollTop() < contactPage) { //scrolled past the other div?
+//             $("#detailButton").show(); //reached the desired point -- show div
+//         }
+//         /*
+//         console.log("scrollTop: " + $(window).scrollTop());
+//         console.log("document.height: " + $(document).height());
+//         console.log("window.height: " + $(window).height());
 
-        //scrolltop max 4060 vs document.height 4870
-        //4889 vs 5699 (dif 810)
-        if ($(window).scrollTop() + 10 >= $(document).height() - $(window).height()) {
-            alert("We're at the bottom of the page!!");
-            exit();
-        }
-        */
-        else {
-            $("#detailButton").hide();
-        }
-    });
-});
+//         //scrolltop max 4060 vs document.height 4870
+//         //4889 vs 5699 (dif 810)
+//         if ($(window).scrollTop() + 10 >= $(document).height() - $(window).height()) {
+//             alert("We're at the bottom of the page!!");
+//             exit();
+//         }
+//         */
+//         else {
+//             $("#detailButton").hide();
+//         }
+//     });
+// });
 
