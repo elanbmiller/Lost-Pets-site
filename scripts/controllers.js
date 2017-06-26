@@ -4,7 +4,7 @@ angular.module('LostPetsApp')
     .controller('DishDetailController', ['$scope', 'petDBFactory', function ($scope, petDBFactory) {
 
         //initialize to empty and then try to get data from server
-        $scope.petDB = {};
+        $scope.petDB = [];
         petDBFactory.getDB()
         .then(
             function(response) {
