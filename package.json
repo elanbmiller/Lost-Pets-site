@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "angular": "^1.6.4",
-    "gulp-jshint": "file:node_modules/gulp-jshint",
+    "angular-resource": "^1.6.4",
     "simple-line-icons": "^2.3.2"
   }
 }

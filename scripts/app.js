@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('LostPetsApp', []);
+angular.module('LostPetsApp', ['ngResource']);
