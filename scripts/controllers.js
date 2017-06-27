@@ -3,15 +3,29 @@
 angular.module('LostPetsApp')
     .controller('DishDetailController', ['$scope', 'petDBFactory', function ($scope, petDBFactory) {
 
+
+        //Stuff for dealing with no server info
+        $scope.showData = false;
+        $scope.message = "Processing Data ...";
+
         //initialize to empty and then try to get data from server
         $scope.petDB = [];
         petDBFactory.getDB()
         .then(
             function(response) {
                 $scope.DBofPets = response.data;
+                console.log("inside");
+                console.log(response.data);
+                $scope.showData = true;
+            },
+            function(response){
+                $scope.message = "Error: " + response.status + " " + response.statusText;
             }
         );
 
+
+        console.log("Printing petDB");
+        console.log($scope.petDB);
         //initially false
         $scope.showDetails = false;
 

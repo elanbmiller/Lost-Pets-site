@@ -51,6 +51,9 @@ angular.module('LostPetsApp')
 
 
     petFac.getDB = function () {
+      console.log("here is the url...");
+      console.log("base url: " + baseURL);
+      console.log($http.get(baseURL+"DBofPets"));
       return $http.get(baseURL+"DBofPets");
     };
     /*    dishFac.getDish = function(index) {

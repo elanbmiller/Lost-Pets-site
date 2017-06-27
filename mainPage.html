@@ -76,7 +76,10 @@
 
         <div class="container">
             <div class="row row-content" ng-controller="DishDetailController">
-                <div class="col-xs-12 text-center">
+                <div class="col-xs-12 text-center" ng-if="!showData">
+                    <h1 class="text-danger">{{message}}</h1>
+                </div>
+                <div class="col-xs-12 text-center" ng-if="showData">
                     <button ng-click="toggleDetails()" class="btn btn-xs btn-primary pull-right" id="detailButton" style="margin-top:50px;" type="button">{{showDetails ? 'Hide Details':'Show Details'}}</button>
                     <div class="media">
                         <!--
@@ -101,7 +104,7 @@
                         <input type="text" name="search" placeholder="Search" ng-model="inputText">
                     </p>
                     <ul>
-                        <blockquote ng-repeat="entry in petDB.entries | orderBy:inputText">
+                        <blockquote ng-repeat="entry in petDB.entries">
                             <div class="media">
                                 <div class="media-left media-middle">
                                     <a href="#"><img class="media-object img-thumbnail" style="max-width: 100%;" ng-src={{entry.picture}} alt="someImage"></a>
