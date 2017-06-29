@@ -5,7 +5,7 @@ angular.module('LostPetsApp')
 
 
         //Stuff for dealing with no server info
-        $scope.showData = true;
+        $scope.showData = false;
         $scope.message = "Processing Data ...";
 
         //initialize to empty and then try to get data from server -- this is $http method
@@ -23,11 +23,17 @@ angular.module('LostPetsApp')
             }
         );*/
 
-        $scope.petDB = petDBFactory.getDB().query();
+        $scope.petDB = petDBFactory.getDB().query(
+            function(response){
+                $scope.DBofPets = response;
+                $scope.showData = true;
+                console.log(response[0].entries[0]);//return actual useful data
+            },
+            function(response){
+                $scope.message = "Error: " + response.status + " " + response.statusText;
+            }
+        );
 
-
-        console.log("Printing petDB");
-        console.log($scope.petDB);
         //initially false
         $scope.showDetails = false;
 

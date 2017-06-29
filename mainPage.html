@@ -89,10 +89,13 @@
                             </a>
                         </div>-->
                         <div class="media-body">
-                            <h2 class="media-heading">{{petDB.name}}
+                            <h2 class="media-heading"><!--{{petDB.name}}--> Search by literally anything</h2>
                                 <!--<span class="label label-danger">{{dish.label}}</span>
                                 <span class="badge">{{dish.price | currency}}</span></h2>-->
-                                <p>{{petDB.description}}</p>
+                                
+                                <!--<p>{{petDB.description}}</p>-->
+                                <p>Enter characteristics such as "retriever" or "brown, husky" or "peyton, retriever"</p>
+                                
                                 <hr>
                         </div>
                     </div>
@@ -104,7 +107,7 @@
                         <input type="text" name="search" placeholder="Search" ng-model="inputText">
                     </p>
                     <ul>
-                        <blockquote ng-repeat="entry in petDB.entries">
+                        <blockquote ng-repeat="entry in petDB[0].entries | orderBy:inputText">
                             <div class="media">
                                 <div class="media-left media-middle">
                                     <a href="#"><img class="media-object img-thumbnail" style="max-width: 100%;" ng-src={{entry.picture}} alt="someImage"></a>
