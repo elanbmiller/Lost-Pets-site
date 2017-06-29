@@ -94,7 +94,7 @@ angular.module('LostPetsApp')
 
 
 
-.controller('PetDetailController', ['$scope', function($scope) {
+.controller('PetDetailController', ['$scope', 'petDBFactory', function($scope) {
     $scope.submitEntry = function () {
     console.log($scope.entry);
 
@@ -103,6 +103,8 @@ angular.module('LostPetsApp')
 
     // Step 3: Push your comment into the dish's comment array
     $scope.DBofPets.entries.push($scope.entry);
+
+    //Added in to add a new pet to db (sends a 'post' call to the server)
 
     //Step 4: reset your form to pristine
     $scope.commentForm.$setPristine();
