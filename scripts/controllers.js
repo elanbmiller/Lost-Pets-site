@@ -1,7 +1,26 @@
 'use strict';
 
 angular.module('LostPetsApp')
-    .controller('DishDetailController', ['$scope', 'petDBFactory', function ($scope, petDBFactory) {
+    .controller('DishDetailController', ['$scope', 'petDBFactory', function ($scope, petDBFactory, ModalService) {
+
+
+
+        //adding modal service
+        ModalService.showModal({
+            templateUrl: "template.html",
+            controller: "ModalController"
+        }).then(function (modal) {
+
+            //it's a bootstrap element, use 'modal' to show it
+            modal.element.modal();
+            modal.close.then(function (result) {
+                console.log(result);
+            });
+        });
+
+
+
+
 
 
         //Stuff for dealing with no server info
@@ -24,12 +43,12 @@ angular.module('LostPetsApp')
         );*/
 
         $scope.petDB = petDBFactory.getDB().query(
-            function(response){
+            function (response) {
                 $scope.DBofPets = response;
                 $scope.showData = true;
                 console.log(response[0].entries[0]);//return actual useful data
             },
-            function(response){
+            function (response) {
                 $scope.message = "Error: " + response.status + " " + response.statusText;
             }
         );
@@ -67,53 +86,53 @@ angular.module('LostPetsApp')
         $scope.invalidChannelSelection = false;
     }])
 
-.controller('FeedbackController', ['$scope', function($scope) {
-    $scope.sendFeedback = function() {
-      console.log($scope.feedback);
-      if ($scope.feedback.agree && ($scope.feedback.mychannel === "") && !$scope.feedback.mychannel) {
-        $scope.invalidChannelSelection = true;
-        console.log('incorrect');
-      } else {
-        $scope.invalidChannelSelection = false;
-        $scope.feedback = {
-          mychannel: "",
-          firstName: "",
-          lastName: "",
-          agree: false,
-          email: ""
+    .controller('FeedbackController', ['$scope', function ($scope) {
+        $scope.sendFeedback = function () {
+            console.log($scope.feedback);
+            if ($scope.feedback.agree && ($scope.feedback.mychannel === "") && !$scope.feedback.mychannel) {
+                $scope.invalidChannelSelection = true;
+                console.log('incorrect');
+            } else {
+                $scope.invalidChannelSelection = false;
+                $scope.feedback = {
+                    mychannel: "",
+                    firstName: "",
+                    lastName: "",
+                    agree: false,
+                    email: ""
+                };
+                $scope.feedback.mychannel = "";
+
+                $scope.feedbackForm.$setPristine();
+                console.log($scope.feedback);
+            }
         };
-        $scope.feedback.mychannel = "";
-
-        $scope.feedbackForm.$setPristine();
-        console.log($scope.feedback);
-      }
-    };
-  }])
+    }])
 
 
 
 
 
-.controller('PetDetailController', ['$scope', 'petDBFactory', function($scope) {
-    $scope.submitEntry = function () {
-    console.log($scope.entry);
+    .controller('PetDetailController', ['$scope', 'petDBFactory', function ($scope) {
+        $scope.submitEntry = function () {
+            console.log($scope.entry);
 
-    //Step 2: This is how you record the date
-    $scope.entry.date = new Date().toISOString();
+            //Step 2: This is how you record the date
+            $scope.entry.date = new Date().toISOString();
 
-    // Step 3: Push your comment into the dish's comment array
-    $scope.DBofPets.entries.push($scope.entry);
+            // Step 3: Push your comment into the dish's comment array
+            $scope.DBofPets.entries.push($scope.entry);
 
-    //Added in to add a new pet to db (sends a 'post' call to the server)
+            //Added in to add a new pet to db (sends a 'post' call to the server)
 
-    //Step 4: reset your form to pristine
-    $scope.commentForm.$setPristine();
+            //Step 4: reset your form to pristine
+            $scope.commentForm.$setPristine();
 
-    //Step 5: reset your JavaScript object that holds your comment
-    $scope.entry = {author: "", date: new Date().toISOString()};
-    console.log($scope.entry);
-    };
-}]);
+            //Step 5: reset your JavaScript object that holds your comment
+            $scope.entry = { author: "", date: new Date().toISOString() };
+            console.log($scope.entry);
+        };
+    }]);
 
 
 
