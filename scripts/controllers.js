@@ -1,27 +1,7 @@
 'use strict';
 
 angular.module('LostPetsApp')
-    .controller('DishDetailController', ['$scope', 'petDBFactory', function ($scope, petDBFactory, ModalService) {
-
-
-
-        //adding modal service
-        ModalService.showModal({
-            templateUrl: "template.html",
-            controller: "ModalController"
-        }).then(function (modal) {
-
-            //it's a bootstrap element, use 'modal' to show it
-            modal.element.modal();
-            modal.close.then(function (result) {
-                console.log(result);
-            });
-        });
-
-
-
-
-
+    .controller('DishDetailController', ['$scope', 'petDBFactory', function ($scope, petDBFactory) {
 
         //Stuff for dealing with no server info
         $scope.showData = false;
@@ -66,6 +46,33 @@ angular.module('LostPetsApp')
         //$scope.dish = dish;
 
     }])
+
+
+
+
+    .controller('ModalCtrl', function($scope, ModalService) {
+
+        //adding modal service
+        $scope.show = function () {
+            ModalService.showModal({
+                templateUrl: "../modalTemplates/complex.html",
+                controller: "ModalController"
+            }).then(function (modal) {
+
+                //it's a bootstrap element, use 'modal' to show it
+                modal.element.modal();
+                modal.close.then(function (result) {
+                    console.log(result);
+                });
+            });
+        };
+    })
+
+
+
+
+
+
 
     .controller('ContactController', ['$scope', function ($scope) {
         $scope.feedback = {
@@ -132,7 +139,14 @@ angular.module('LostPetsApp')
             $scope.entry = { author: "", date: new Date().toISOString() };
             console.log($scope.entry);
         };
-    }]);
+    }])
 
 
 
+
+    .controller('ModalController', function ($scope, close) {
+        $scope.close = function (result) {
+            close(result, 500); // close, but give 500ms for bootstrap to animate
+            //close("Success!");
+        };
+    });
