@@ -149,4 +149,7 @@ angular.module('LostPetsApp')
             close(result, 500); // close, but give 500ms for bootstrap to animate
             //close("Success!");
         };
+        $scope.cancel = function (result) {
+            close(result, 500);
+        };
     });
