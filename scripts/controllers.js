@@ -51,14 +51,12 @@ angular.module('LostPetsApp')
 
 
     .controller('ModalCtrl', function ($scope, ModalService) {
-
         //adding modal service
         $scope.show = function () {
             ModalService.showModal({
                 templateUrl: "../modalTemplates/complex.html",
                 controller: "ModalController"
             }).then(function (modal) {
-
                 //it's a bootstrap element, use 'modal' to show it
                 modal.element.modal();
                 modal.close.then(function (result) {
