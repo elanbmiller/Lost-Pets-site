@@ -50,7 +50,7 @@ angular.module('LostPetsApp')
 
 
 
-    .controller('ModalCtrl', function($scope, ModalService) {
+    .controller('ModalCtrl', function ($scope, ModalService) {
 
         //adding modal service
         $scope.show = function () {
@@ -146,10 +146,12 @@ angular.module('LostPetsApp')
 
     .controller('ModalController', function ($scope, close) {
         $scope.close = function (result) {
-            close(result, 500); // close, but give 500ms for bootstrap to animate
-            //close("Success!");
-        };
-        $scope.cancel = function (result) {
-            close(result, 500);
+            if (result == "Submit") {
+                close(result, 500); // close, but give 500ms for bootstrap to animate
+                //close("Success!");
+            }
+            else {
+                close(result, 0);
+            }
         };
     });
