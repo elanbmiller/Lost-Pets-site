@@ -146,12 +146,7 @@ angular.module('LostPetsApp')
 
     .controller('ModalController', function ($scope, close) {
         $scope.close = function (result) {
-            if (result == 'Submit') {
                 close(result, 500); // close, but give 500ms for bootstrap to animate
                 //close("Success!");
-            }
-            else {
-                close(result, 0);
-            }
         };
     });
