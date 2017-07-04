@@ -11,9 +11,6 @@
 
     <title>Find your pet</title>
 
-    <!-- Angular Package -->
-    <script src="node_modules/angular/angular.min.js"></script>
-
     <!-- Bootstrap Core CSS -->
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -89,7 +86,7 @@
     </header>
 
 
-    <div ng-include="'mainPage.html'"></div>
+    <div ng-include="'mainPage.html'" ng-cloak></div>
 
 
     <!-- jQuery -->
@@ -105,7 +102,8 @@
     <script src="js/new-age.min.js"></script>
 
 
-
+    <!-- Angular Package -->
+    <script src="node_modules/angular/angular.min.js"></script>
 
     <!-- Angular Route -->
     <script src="bower_components/angular-route/angular-route.min.js"></script>
