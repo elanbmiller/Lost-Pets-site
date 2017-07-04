@@ -50,7 +50,7 @@ angular.module('LostPetsApp')
 
 
 
-    .controller('ModalCtrl', function ($scope, ModalService) {
+    .controller('ModalCtrl', ['$scope', 'petDBFactory', function ($scope, ModalService) {
         //adding modal service
         $scope.show = function () {
             ModalService.showModal({
@@ -64,7 +64,7 @@ angular.module('LostPetsApp')
                 });
             });
         };
-    })
+    }])
 
 
 
