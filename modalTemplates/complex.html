@@ -82,13 +82,22 @@
                             </div>
 
 
-
-
                             <div class="form-group">
+                                <label for="picture" class="col-sm-1 control-label"></label>
+                                <div class="col-sm-11">
+                                    <label for="upload-photo">Upload a photo of animal</label>
+                                    <input type="file" (change)="fileChange($event)" id="upload-photo" placeholder="Upload file" accept=".jpg,.jpeg,.png">
+                                    <!-- Need to define filechange() function -->
+                                </div>
+                            </div>
+
+
+
+                            <!--<div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
                                     <button type="submit" class="btn btn-primary">Send Feedback</button>
                                 </div>
-                            </div>
+                            </div>-->
 
 
 
@@ -102,8 +111,6 @@
             <div class="modal-footer">
                 <button type="button" ng-click="close('Submit')" class="btn btn-primary" data-dismiss="modal">Submit</button>
                 <button type="button" ng-click="close('Cancel')" class="btn" data-dismiss="modal">Cancel</button>
-                <input type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".jpg,.jpeg,.png">
-                <!-- Need to define filechange() function -->
             </div>
         </div>
     </div>
