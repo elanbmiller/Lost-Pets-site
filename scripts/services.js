@@ -59,7 +59,7 @@ angular.module('LostPetsApp')
 
 //function with $resource method (from ng-resource module)
       petFac.getDB = function(){
-        return $resource(baseURL+"DBofPets",null,{'update':{method:'PUT' }});
+        return $resource(baseURL+"DBofPets",null,{'update':{method:'PUT' }});//update function needs to be implemented
       }
 
 

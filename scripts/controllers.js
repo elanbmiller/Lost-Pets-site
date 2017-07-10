@@ -142,9 +142,9 @@ angular.module('LostPetsApp')
 
 
 
-    .controller('ModalController', function ($scope, close) {
+    .controller('ModalController', ['$scope', 'petDBFactory', function (close, $scope) {
         $scope.close = function (result) {
-                close(result, 500); // close, but give 500ms for bootstrap to animate
-                //close("Success!");
+            close(result, 500); // close, but give 500ms for bootstrap to animate
+            //close("Success!");
         };
-    });
+    }]);
