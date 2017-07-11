@@ -22,7 +22,7 @@ angular.module('LostPetsApp')
             }
         );*/
 
-        $scope.petDB = petDBFactory.getDB().query(
+        $scope.petDB = petDBFactory.getDB().query(      //--query() returns entire array from resource
             function (response) {
                 $scope.DBofPets = response;
                 $scope.showData = true;
