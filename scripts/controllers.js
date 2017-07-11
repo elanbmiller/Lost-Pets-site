@@ -121,6 +121,7 @@ angular.module('LostPetsApp')
     .controller('PetDetailController', ['$scope', 'petDBFactory', function ($scope) {
         $scope.submitEntry = function () {
             console.log($scope.entry);
+            console.log("submitting!!!!")
 
             //Step 2: This is how you record the date
             $scope.entry.date = new Date().toISOString();
