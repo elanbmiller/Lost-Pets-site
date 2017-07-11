@@ -75,11 +75,11 @@
 
 
 
-                            <div class="form-group" ng-class="{ 'has-error': commentForm.comment.$error.required && !commentForm.comment.$pristine }">
+                            <div class="form-group" ng-class="{ 'has-error': commentForm.details.$error.required && !commentForm.details.$pristine }">
                                 <label for="details" class="col-sm-1 control-label">Details</label>
                                 <div class="col-sm-11">
                                     <textarea class="form-control" id="details" name="details" rows="10" ng-model="comment.moreDetails" required></textarea>
-                                    <span ng-show="commentForm.comment.$error.required && !commentForm.comment.$pristine" class="help-block">Some details are required</span>
+                                    <span ng-show="commentForm.details.$error.required && !commentForm.details.$pristine" class="help-block">Some details are required</span>
                                 </div>
                             </div>
 
