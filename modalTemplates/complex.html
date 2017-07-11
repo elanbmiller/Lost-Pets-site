@@ -48,14 +48,15 @@
                                 <label for="author" class="col-sm-1 control-label">Name</label>
                                 <div class="col-sm-11">
                                     <input type="name" class="form-control" id="author" name="author" placeholder="Name" ng-model="comment.author" required>
-                                    <span ng-show="commentForm.author.$error.required && !commentForm.author.$pristine" class="help-block"> Youir name is required.</span>
+                                    <span ng-show="commentForm.author.$error.required && !commentForm.author.$pristine" class="help-block"> Your name is required.</span>
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error': commentForm.emailid.$error.required && !commentForm.emailid.$pristine }">
                                 <label for="emailid" class="col-sm-1 control-label">Email</label>
                                 <div class="col-sm-11">
-                                    <input type="email" class="form-control" id="emailid" name="emailid" placeholder="Email">
+                                    <input type="email" class="form-control" id="emailid" name="emailid" placeholder="Email" ng-model="comment.emailid" required>
+                                    <span ng-show="commentForm.emailid.$error.required && !commentForm.emailid.$pristine" class="help-block"> Enter a valid email</span>
                                 </div>
                             </div>
 
