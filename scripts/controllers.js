@@ -26,7 +26,8 @@ angular.module('LostPetsApp')
             function (response) {
                 $scope.DBofPets = response;
                 $scope.showData = true;
-                console.log(response[0].entries[0]);//return actual useful data
+                console.log("DB of Pets: ");//return actual useful data
+                console.log($scope.DBofPets[0].entries);//return actual useful data
             },
             function (response) {
                 $scope.message = "Error: " + response.status + " " + response.statusText;
@@ -58,7 +59,25 @@ angular.module('LostPetsApp')
                 //it's a bootstrap element, use 'modal' to show it
                 modal.element.modal();
                 modal.close.then(function (result) {
-                    console.log("You're result is: " + result);
+                    if (result == 'Submit') {
+                        console.log("Your result is submit : " + result);
+                        //Step 2: This is how you record the date
+                        $scope.entry.date = new Date().toISOString();
+
+                        // Step 3: Push your comment into the dish's comment array
+                        $scope.DBofPets.entries.push($scope.entry);
+
+                        //Added in to add a new pet to db (sends a 'post' call to the server)
+
+                        //Step 4: reset your form to pristine
+                        $scope.commentForm.$setPristine();
+
+                        //Step 5: reset your JavaScript object that holds your comment
+                        $scope.entry = { author: "", date: new Date().toISOString() };
+                    }
+                    else {
+                        console.log("Result of modal: " + result);
+                    }
                 });
             });
         };
@@ -166,7 +185,7 @@ angular.module('LostPetsApp')
 
 
 
-    .controller('ModalController',function ($scope, close) {
+    .controller('ModalController', function ($scope, close) {
         $scope.close = function (result) {
             close(result, 500); // close, but give 500ms for bootstrap to animate
             //close("Success!");
