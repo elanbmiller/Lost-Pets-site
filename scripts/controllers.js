@@ -49,7 +49,7 @@ angular.module('LostPetsApp')
 
 
 
-    .controller('ModalCtrl', function ($scope, ModalService, petDBFactory) {
+    .controller('ModalCtrl',['$scope', 'petDBFactory', function ($scope, ModalService, petDBFactory) {
         //adding modal service
         $scope.show = function () {
             ModalService.showModal({
@@ -62,6 +62,9 @@ angular.module('LostPetsApp')
                     if (result == 'Submit') {
                         console.log("Your result is submit : " + result);
                         //Step 2: This is how you record the date
+                        console.log($scope.DBofPets[0].entries.size());
+
+
                         $scope.entry.date = new Date().toISOString();
 
                         // Step 3: Push your comment into the dish's comment array
@@ -74,45 +77,17 @@ angular.module('LostPetsApp')
 
                         //Step 5: reset your JavaScript object that holds your comment
                         $scope.entry = { author: "", date: new Date().toISOString() };
+
+                        console.log($scope.DBofPets[0].entries);//ensure that data persisted
                     }
                     else {
                         console.log("Result of modal: " + result);
+                        console.log($scope.DBofPets);
                     }
                 });
             });
         };
-
-
-        /*$scope.submitEntry = function () {
-            console.log($scope.entry);
-            console.log("submitting!!!!")
-
-            //Step 2: This is how you record the date
-            $scope.entry.date = new Date().toISOString();
-
-            // Step 3: Push your comment into the dish's comment array
-            $scope.DBofPets.entries.push($scope.entry);
-
-            //Added in to add a new pet to db (sends a 'post' call to the server)
-
-            //Step 4: reset your form to pristine
-            $scope.commentForm.$setPristine();
-
-            //Step 5: reset your JavaScript object that holds your comment
-            $scope.entry = { author: "", date: new Date().toISOString() };
-            console.log($scope.entry);
-        };*/
-
-
-
-
-    })
-
-
-
-
-
-
+    }])
 
     .controller('ContactController', ['$scope', function ($scope) {
         $scope.feedback = {
