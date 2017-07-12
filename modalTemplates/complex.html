@@ -1,4 +1,4 @@
-<div class="modal fade" ng-controller="ModalController">
+<div class="modal fade">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -7,22 +7,11 @@
             </div>
 
 
-
-
-
-
-
-
-
-
-            <div class="container">
-                <div class="row row-content">
-                    <p style="padding:5px;"></p>
-
-                    <div class="col-xs-12 col-sm-9">
-
-
-                        <form class="form-horizontal" role="form" name="commentForm" ng-submit="submitComment()" novalidate>
+            <form class="form-horizontal" role="form" name="commentForm" ng-submit="submitComment()" novalidate>
+                <div class="container">
+                    <div class="row row-content">
+                        <p style="padding:5px;"></p>
+                        <div class="col-xs-12 col-sm-9">
                             <div class="form-group" ng-class="{ 'has-error':commentForm.author.$error.required && !commentForm.author.$pristine }">
                                 <label for="author" class="col-sm-1 control-label">Name</label>
                                 <div class="col-sm-11">
@@ -72,22 +61,16 @@
                                     <!-- Need to define filechange() function -->
                                 </div>
                             </div>
-
-                        </form>
-
+                        </div>
                     </div>
                 </div>
-            </div>
 
-
-
-
-
-
-            <div class="modal-footer">
-                <button type="submit" ng-click="close('Submit')" class="btn btn-primary" ng-disabled="commentForm.$invalid" data-dismiss="modal">Submit</button>
-                <button type="button" ng-click="close('Cancel')" class="btn" data-dismiss="modal">Cancel</button>
-            </div>
+                <div class="modal-footer">
+                    <button type="submit" ng-click="close('Submit')" class="btn btn-primary" ng-disabled="commentForm.$invalid" data-dismiss="modal">Submit</button>
+                    <button type="button" ng-click="close('Cancel')" class="btn" data-dismiss="modal">Cancel</button>
+                </div>
+            </form>
+            
         </div>
     </div>
 </div>

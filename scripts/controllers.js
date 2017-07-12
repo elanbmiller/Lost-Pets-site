@@ -50,7 +50,7 @@ angular.module('LostPetsApp')
 
 
 
-    .controller('ModalCtrl', function ($scope, ModalService) {
+    .controller('ModalCtrl', function ($scope, ModalService, petDBFactory) {
         //adding modal service
         $scope.show = function () {
             ModalService.showModal({
@@ -64,6 +64,31 @@ angular.module('LostPetsApp')
                 });
             });
         };
+
+
+        /*$scope.submitEntry = function () {
+            console.log($scope.entry);
+            console.log("submitting!!!!")
+
+            //Step 2: This is how you record the date
+            $scope.entry.date = new Date().toISOString();
+
+            // Step 3: Push your comment into the dish's comment array
+            $scope.DBofPets.entries.push($scope.entry);
+
+            //Added in to add a new pet to db (sends a 'post' call to the server)
+
+            //Step 4: reset your form to pristine
+            $scope.commentForm.$setPristine();
+
+            //Step 5: reset your JavaScript object that holds your comment
+            $scope.entry = { author: "", date: new Date().toISOString() };
+            console.log($scope.entry);
+        };*/
+
+
+
+
     })
 
 
