@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('LostPetsApp')
-    .controller('DishDetailController', ['$scope', 'petDBFactory', function ($scope, petDBFactory) {
+    .controller('DishDetailController', ['$scope', '$rootScope', 'petDBFactory', function ($scope, $rootScope, petDBFactory) {
 
         //Stuff for dealing with no server info
         $scope.showData = false;
@@ -22,7 +22,7 @@ angular.module('LostPetsApp')
             }
         );*/
 
-        $scope.petDB = petDBFactory.getDB().query(      //--query(sucess, error) returns entire array from resource
+        $rootScope.petDB = petDBFactory.getDB().query(      //--query(sucess, error) returns entire array from resource
             function (response) {
                 $scope.DBofPets = response;
                 $scope.showData = true;
@@ -49,7 +49,7 @@ angular.module('LostPetsApp')
 
 
 
-    .controller('ModalCtrl',['$scope', 'petDBFactory', function ($scope, ModalService, petDBFactory) {
+    .controller('ModalCtrl', function ($scope, $rootScope, ModalService, petDBFactory) {
         //adding modal service
         $scope.show = function () {
             ModalService.showModal({
@@ -82,12 +82,12 @@ angular.module('LostPetsApp')
                     }
                     else {
                         console.log("Result of modal: " + result);
-                        console.log($scope.DBofPets);
+                        console.log("Size of array: " + $scope.petDB[0].entries.length);
                     }
                 });
             });
         };
-    }])
+    })
 
     .controller('ContactController', ['$scope', function ($scope) {
         $scope.feedback = {
