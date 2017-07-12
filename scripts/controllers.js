@@ -22,9 +22,9 @@ angular.module('LostPetsApp')
             }
         );*/
 
-        $rootScope.petDB = petDBFactory.getDB().query(      //--query(sucess, error) returns entire array from resource
+        $scope.petDB = petDBFactory.getDB().query(      //--query(sucess, error) returns entire array from resource
             function (response) {
-                $scope.DBofPets = response;
+                $rootScope.DBofPets = response;
                 $scope.showData = true;
                 console.log("DB of Pets: ");//return actual useful data
                 console.log($scope.DBofPets[0].entries);//return actual useful data
@@ -37,7 +37,7 @@ angular.module('LostPetsApp')
         //initially false
         $scope.showDetails = false;
 
-        $scope.entry = { author: "", date: new Date().toISOString(), moreDetails: "" };
+        $rootScope.entry = { author: "", date: new Date().toISOString(), moreDetails: ""};
 
 
         $scope.toggleDetails = function () {
@@ -62,13 +62,12 @@ angular.module('LostPetsApp')
                     if (result == 'Submit') {
                         console.log("Your result is submit : " + result);
                         //Step 2: This is how you record the date
-                        console.log($scope.DBofPets[0].entries.size());
+                        console.log("size of array now: " + $scope.DBofPets[0].entries.length);
 
-
-                        $scope.entry.date = new Date().toISOString();
+                        $rootScope.entry.date = new Date().toISOString();
 
                         // Step 3: Push your comment into the dish's comment array
-                        $scope.DBofPets.entries.push($scope.entry);
+                        $rootScope.DBofPets[0].entries.push($rootScope.entry);
 
                         //Added in to add a new pet to db (sends a 'post' call to the server)
 
@@ -82,7 +81,7 @@ angular.module('LostPetsApp')
                     }
                     else {
                         console.log("Result of modal: " + result);
-                        console.log("Size of array: " + $scope.petDB[0].entries.length);
+                        console.log("Size of array: " + $scope.DBofPets[0].entries.length);
                     }
                 });
             });
