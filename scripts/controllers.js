@@ -43,8 +43,6 @@ angular.module('LostPetsApp')
             $scope.showDetails = !$scope.showDetails;
         };
 
-        //$scope.dish = dish;
-
     }])
 
 
