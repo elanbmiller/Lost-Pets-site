@@ -53,39 +53,15 @@ angular.module('LostPetsApp')
         $scope.show = function () {
             ModalService.showModal({
                 templateUrl: "../modalTemplates/complex.html",
-                controller: "ModalController"
+                controller: "PetDetailController"
             }).then(function (modal) {
                 //it's a bootstrap element, use 'modal' to show it
                 modal.element.modal();
                 modal.close.then(function (result) {
-                    console.log(result);
+                    console.log("You said" + result);
                 });
             });
         };
-
-
-        /*$scope.submitEntry = function () {
-            console.log($scope.entry);
-            console.log("submitting!!!!")
-
-            //Step 2: This is how you record the date
-            $scope.entry.date = new Date().toISOString();
-
-            // Step 3: Push your comment into the dish's comment array
-            $scope.DBofPets.entries.push($scope.entry);
-
-            //Added in to add a new pet to db (sends a 'post' call to the server)
-
-            //Step 4: reset your form to pristine
-            $scope.commentForm.$setPristine();
-
-            //Step 5: reset your JavaScript object that holds your comment
-            $scope.entry = { author: "", date: new Date().toISOString() };
-            console.log($scope.entry);
-        };*/
-
-
-
 
     })
 
@@ -141,7 +117,11 @@ angular.module('LostPetsApp')
 
 
 
-    .controller('PetDetailController', ['$scope', 'petDBFactory', function ($scope) {
+    .controller('PetDetailController', ['$scope', 'petDBFactory', function (close, $scope, petDBFactory) {
+        $scope.close = function (result) {
+            close(result, 500); // close, but give 500ms for bootstrap to animate
+            //close("Success!");
+        };
         $scope.submitEntry = function () {
             console.log($scope.entry);
             console.log("submitting!!!!")

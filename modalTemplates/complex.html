@@ -7,7 +7,7 @@
             </div>
 
 
-            <form class="form-horizontal" role="form" name="commentForm" ng-submit="submitComment()" novalidate>
+            <form class="form-horizontal" role="form" name="commentForm" ng-submit="submitEntry()" novalidate>
                 <div class="container">
                     <div class="row row-content">
                         <p style="padding:5px;"></p>
@@ -65,12 +65,12 @@
                     </div>
                 </div>
 
-                <div class="modal-footer">
+                <div class="modal-footer"><!-- close('Submit') -->
                     <button type="submit" ng-click="close('Submit')" class="btn btn-primary" ng-disabled="commentForm.$invalid" data-dismiss="modal">Submit</button>
                     <button type="button" ng-click="close('Cancel')" class="btn" data-dismiss="modal">Cancel</button>
                 </div>
             </form>
-            
+
         </div>
     </div>
 </div>
