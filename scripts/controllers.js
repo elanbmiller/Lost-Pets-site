@@ -37,7 +37,7 @@ angular.module('LostPetsApp')
         //initially false
         $scope.showDetails = false;
 
-        $rootScope.entry = { author: "", date: new Date().toISOString(), moreDetails: ""};
+        $rootScope.entry = { author: "", date: new Date().toISOString(), emailid: "", moreDetails: "", picture: "" };
 
 
         $scope.toggleDetails = function () {
@@ -60,9 +60,6 @@ angular.module('LostPetsApp')
                 modal.element.modal();
                 modal.close.then(function (result) {
                     if (result == 'Submit') {
-                        console.log("Your result is submit : " + result);
-                        //Step 2: This is how you record the date
-                        console.log("size of array now: " + $scope.DBofPets[0].entries.length);
 
                         console.log("Comment data: ");
                         console.log($scope.entry);
@@ -78,7 +75,7 @@ angular.module('LostPetsApp')
                         //$scope.commentForm.$setPristine();
 
                         //Step 5: reset your JavaScript object that holds your comment
-                        $rootScope.entry = { author: "", date: new Date().toISOString(), emailid: "", moreDetails: "" };
+                        $rootScope.entry = { author: "", date: new Date().toISOString(), emailid: "", moreDetails: "", picture: "" };
 
                         console.log($scope.DBofPets[0].entries);//ensure that data persisted
                     }
@@ -154,7 +151,7 @@ angular.module('LostPetsApp')
             $scope.commentForm.$setPristine();
 
             //Step 5: reset your JavaScript object that holds your comment
-            $scope.entry = { author: "", date: new Date().toISOString() };
+            $scope.entry = { author: "", date: new Date().toISOString(), emailid: "", moreDetails: "", picture: ""};
             console.log($scope.entry);
         };
     }])

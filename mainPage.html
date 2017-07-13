@@ -115,7 +115,9 @@
                                 <p style="padding:1px;"></p>
                                 <div class="media-body">
                                     <p ng-show="showDetails">{{entry.moreDetails}}</p>
-                                    <footer>{{entry.author}}, {{entry.date | date}}</footer>
+                                    <footer>{{entry.author}},<strong ng-if="entry.emailid != null"> {{entry.emailid}},</strong>
+                                    <strong ng-if="entry.areaCode != null"> ({{entry.areaCode}})</strong>
+                                    <strong ng-if="entry.phoneNum != null"> {{entry.phoneNum}},</strong> {{entry.date | date}}</footer>
                                 </div>
                             </div>
                         </blockquote>
