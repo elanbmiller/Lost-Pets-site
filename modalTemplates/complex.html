@@ -2,12 +2,12 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" ng-click="close('wasssup!!')" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <button type="button" class="close" ng-click="close('exd')" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h3 class="modal-title text-center"><strong>Add your missing pet to the database</strong></h3>
             </div>
 
 
-            <form class="form-horizontal" role="form" name="commentForm" ng-submit="submitEntry()" novalidate>
+            <form class="form-horizontal" role="form" name="commentForm" novalidate>
                 <div class="container">
                     <div class="row row-content">
                         <p style="padding:5px;"></p>
@@ -15,7 +15,7 @@
                             <div class="form-group" ng-class="{ 'has-error':commentForm.author.$error.required && !commentForm.author.$pristine }">
                                 <label for="author" class="col-sm-1 control-label">Name</label>
                                 <div class="col-sm-11">
-                                    <input type="name" class="form-control" id="author" name="author" placeholder="Name" ng-model="comment.author" required>
+                                    <input type="name" class="form-control" id="author" name="author" placeholder="Name" ng-model="entry.author" required>
                                     <span ng-show="commentForm.author.$error.required && !commentForm.author.$pristine" class="help-block"> Your name is required.</span>
                                 </div>
                             </div>
@@ -23,7 +23,7 @@
                             <div class="form-group" ng-class="{ 'has-error': commentForm.emailid.$error.required && !commentForm.emailid.$pristine }">
                                 <label for="emailid" class="col-sm-1 control-label">Email</label>
                                 <div class="col-sm-11">
-                                    <input type="email" class="form-control" id="emailid" name="emailid" placeholder="Email" ng-model="comment.emailid" required>
+                                    <input type="email" class="form-control" id="emailid" name="emailid" placeholder="Email" ng-model="entry.emailid" required>
                                     <span ng-show="commentForm.emailid.$error.required && !commentForm.emailid.$pristine" class="help-block"> Enter a valid email</span>
                                 </div>
                             </div>
@@ -47,7 +47,7 @@
                             <div class="form-group" ng-class="{ 'has-error': commentForm.details.$error.required && !commentForm.details.$pristine }">
                                 <label for="details" class="col-sm-1 control-label">Details</label>
                                 <div class="col-sm-11">
-                                    <textarea class="form-control" id="details" name="details" rows="10" ng-model="comment.moreDetails" required></textarea>
+                                    <textarea class="form-control" id="details" name="details" rows="10" ng-model="entry.moreDetails" required></textarea>
                                     <span ng-show="commentForm.details.$error.required && !commentForm.details.$pristine" class="help-block">Some details are required</span>
                                 </div>
                             </div>

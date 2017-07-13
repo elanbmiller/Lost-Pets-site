@@ -64,10 +64,10 @@ angular.module('LostPetsApp')
                         //Step 2: This is how you record the date
                         console.log("size of array now: " + $scope.DBofPets[0].entries.length);
 
-                        $rootScope.entry.date = new Date().toISOString();
-                        $rootScope.entry.author = $scope.comment.author;
+                        console.log("Comment data: ");
+                        console.log($scope.entry);
 
-                        console.log("date: " + $rootScope.entry.date + "   author: " + $rootScope.entry.author);
+                        $rootScope.entry.date = new Date().toISOString();
 
                         // Step 3: Push your comment into the dish's comment array
                         $rootScope.DBofPets[0].entries.push($rootScope.entry);
@@ -78,7 +78,7 @@ angular.module('LostPetsApp')
                         //$scope.commentForm.$setPristine();
 
                         //Step 5: reset your JavaScript object that holds your comment
-                        $scope.entry = { author: "", date: new Date().toISOString() };
+                        $rootScope.entry = { author: "", date: new Date().toISOString(), emailid: "", moreDetails: "" };
 
                         console.log($scope.DBofPets[0].entries);//ensure that data persisted
                     }
