@@ -57,8 +57,7 @@
                                 <label for="picture" class="col-sm-1 control-label"></label>
                                 <div class="col-sm-11">
                                     <label for="upload-photo">Upload a photo of animal</label>
-                                    <input type="file" (change)="fileChange($event)" id="upload-photo" placeholder="Upload file" ng-model="entry.picture" accept=".jpg,.jpeg,.png">
-                                    <!-- Need to define filechange() function -->
+                                    <input type="file" id="upload-photo" placeholder="Upload file" ng-model="entry.picture" accept=".jpg,.jpeg,.png">
                                 </div>
                             </div>
                         </div>
