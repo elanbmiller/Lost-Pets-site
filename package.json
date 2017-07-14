@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "angular": "^1.6.4",
+    "angular-file-upload": "^2.5.0",
     "angular-modal-service": "^0.12.1",
     "angular-resource": "^1.6.4",
     "simple-line-icons": "^2.3.2"

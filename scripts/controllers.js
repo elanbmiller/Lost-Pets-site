@@ -49,7 +49,7 @@ angular.module('LostPetsApp')
 
 
 
-    .controller('ModalCtrl', function ($scope, $rootScope, ModalService, fileUploadService, petDBFactory) {
+    .controller('ModalCtrl', function ($scope, $rootScope, ModalService, petDBFactory) {
         //adding modal service
         $scope.show = function () {
             ModalService.showModal({
@@ -85,18 +85,6 @@ angular.module('LostPetsApp')
                     }
                 });
             });
-        };
-
-        $scope.uploadFile = function () {
-            var file = $scope.myFile;
-            var uploadUrl = "../img/upload.jpg", //Url of webservice/api/server
-                promise = fileUploadService.uploadFileToUrl(file, uploadUrl);
-
-            promise.then(function (response) {
-                $scope.serverResponse = response;
-            }, function () {
-                $scope.serverResponse = 'An error in uploading the file has occurred';
-            })
         };
 
     })
