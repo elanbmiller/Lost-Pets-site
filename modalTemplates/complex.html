@@ -57,7 +57,8 @@
                                 <label for="picture" class="col-sm-1 control-label"></label>
                                 <div class="col-sm-11">
                                     <label for="upload-photo">Upload a photo of animal</label>
-                                    <input type="file" id="upload-photo" placeholder="Upload file" ng-model="entry.picture" accept=".jpg,.jpeg,.png">
+                                    <input type="file" demo-file-model="myFile" id="upload-photo" placeholder="Upload file" ng-model="entry.picture" accept=".jpg,.jpeg,.png">
+                                    </div>{{serverResponse}}</div>
                                 </div>
                             </div>
                         </div>
@@ -65,7 +66,7 @@
                 </div>
 
                 <div class="modal-footer"><!-- close('Submit') -->
-                    <button type="submit" ng-click="close('Submit')" class="btn btn-primary" ng-disabled="commentForm.$invalid" data-dismiss="modal">Submit</button>
+                    <button type="submit" ng-click="close('Submit'); uploadFile()" class="btn btn-primary" ng-disabled="commentForm.$invalid" data-dismiss="modal">Submit</button>
                     <button type="button" ng-click="close('Cancel')" class="btn" data-dismiss="modal">Cancel</button>
                 </div>
             </form>
