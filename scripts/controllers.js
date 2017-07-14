@@ -49,7 +49,7 @@ angular.module('LostPetsApp')
 
 
 
-    .controller('ModalCtrl', function ($scope, $rootScope, ModalService, petDBFactory) {
+    .controller('ModalCtrl', function ($scope, $rootScope, ModalService, upload, petDBFactory) {
         //adding modal service
         $scope.show = function () {
             ModalService.showModal({
