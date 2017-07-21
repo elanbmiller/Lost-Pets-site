@@ -21,6 +21,7 @@
     "angular-modal-service": "^0.12.1",
     "angular-resource": "^1.6.4",
     "angular-upload": "^1.0.13",
+    "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "morgan": "^1.8.2",
     "simple-line-icons": "^2.3.2"
